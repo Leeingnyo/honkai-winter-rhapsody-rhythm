@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width user-scelable=0 initial-scale=1.0 maximum-scale=1.0">
+<style>
+/* reset */
+body { margin: 0; }
+
+/* set unit size */
+/* 세로 */
+html { font-size: calc(10vw * 9 / 16); }
+@media screen and (min-aspect-ratio: 16/9) {
+/* 가로 */
+html { font-size: 10vh; }
+}
+
+body { font-size: 16px; }
+
+#bgm { position: absolute; top: 0; left: 0; opacity: 0.3; }
+
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#view {
+  position: relative;
+  width: calc(10rem * 16 / 9);
+  height: 10rem;
+  /*overflow: hidden;*/
+}
+/* 세로 */
+#view { background: #F008; }
+@media screen and (min-aspect-ratio: 16/9) {
+/* 가로 */
+#view { background: #00F8; }
+}
+</style>
+
+<div id="bgm">
+<!--
+<iframe width="560" height="315" src="https://www.youtube.com/embed/881RW7ceE3o?repeat=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+</div>
+
+<div id="wrapper">
+<div id="view">
+<style>
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div id="debug" class="screen">
+</div>
+
+<div id="main" class="screen">
+</div>
+
+<div id="game" class="screen">
+<style>
+</style>
+<div class="top">
+</div>
+
+<style>
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+</style>
+<div class="bottom">
+
+<style>
+.energy-guage-wrapper {
+  position: absolute;
+  bottom: 2.53rem;
+  left: 50%; transform: translateX(-50%) skewX(-20deg);
+
+  width: 5rem;
+  height: 0.2rem;
+  border-radius: 0.05rem;
+  background: #FFF8;
+  overflow: hidden;
+}
+.energy-guage {
+  height: 100%;
+  width: 50%;
+  border-radius: 0.02rem;
+  background: #25f276;
+}
+</style>
+<div class="energy-guage-wrapper">
+  <div class="energy-guage"></div>
+</div>
+
+<style>
+#controls {
+  position: absolute;
+  bottom: 0.41rem;
+  left: 50%; transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 17.18rem;
+  max-width: 99%;
+  height: 1.55rem;
+  opacity: 0.7;
+}
+.control-button {
+  border: none;
+  outline: none;
+  border-radius: 0.1rem;
+}
+#cyan-button {
+  width: 3.46rem;
+  background: #0CF;
+}
+#cyan-button:active {
+  background: #0CF8;
+}
+#yellow-button {
+  width: 9.61rem;
+  margin: 0 0.283rem;
+  background: #FC0;
+}
+#yellow-button:active {
+  background: #FC08;
+}
+#magenta-button {
+  width: 3.46rem;
+  background: #F6F;
+}
+#magenta-button:active {
+  background: #F6F8;
+}
+</style>
+<div id="controls">
+  <button id="cyan-button" class="control-button"></button>
+  <button id="yellow-button" class="control-button"></button>
+  <button id="magenta-button" class="control-button"></button>
+</div>
+</div>
+
+</div>
+
+<style>
+.preview {
+  position: absolute;
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  height: 100%;
+  opacity: 0.1;
+}
+#preview-12 {
+  height: calc(100% * 12 / 9);
+}
+</style>
+<img class="preview" src="./bg-game-18.5.png">
+<img id="preview-12" class="preview" src="./bg-game-12.jpg">
+<img class="preview" src="./bg-game-16.jpg">
+
+<style>
+#line {
+  position: absolute;
+  top: 0; left: calc(50% - 2.05rem);
+  border-left: 1px solid yellow;
+  height: 100%;
+}
+
+.ball {
+  position: absolute;
+  top: calc(50% - 1.9rem);
+  transform: translate(-50%, -50%);
+  width: 1.1rem; height: 1.1rem;
+  border-radius: 100%;
+}
+#target {
+  border: 1px solid yellow;
+  left: calc(50% - 2.05rem); 
+}
+.ball-spawn {
+  background: url(./types.jpg);
+  background-size: 4rem;
+  filter: brightness(1.5) blur(1px);
+}
+.ball-spawn.cyan {
+  background-position: 77.5% 64.5%;
+}
+.ball-spawn.yellow {
+  background-position: 22.5% 64.5%;
+}
+.ball-spawn.magenta {
+  background-position: 50% 21%;
+}
+</style>
+<div class="screen" id="test">
+  <div id="line"></div>
+  <div id="target" class="ball"></div>
+</div>
+
+</div>
+</div>
+
+<script src="./pausable-timer.js"></script>
+<script>
+var debug = (function () {
+  var debugView = document.querySelector('#debug');
+  if (debugView) 
+  return function (str) {
+    console.log(str);
+    if (debugView) debugView.innerHTML = str + '<br>' + debugView.innerHTML;
+  };
+  return console.log.bind(console);
+})();
+
+var now = (function () {
+  var origin = performance ? performance.now() : (+new Date());
+  var getTime = performance
+      ? performance.now.bind(performance)
+      : function () { return (+new Date()); };
+  return function () { return getTime() - origin; };
+})();
+</script>
+<script>
+var timer = new PausableTimer();
+document.querySelector('#view').onclick = function ( ) {
+  if (document.fullscreenElement) return;
+  var e = document.querySelector('#wrapper');
+  e.requestFullscreen();
+}
+
+var hi;
+const TTT = 4000;
+const NNN = 4;
+const ball = [];
+var test = document.querySelector('#test');
+Array.from(Array(NNN).keys()).forEach(i => {
+  var b = document.createElement('div');
+  b.classList.add('ball');
+  b.classList.add('ball-spawn');
+  b.classList.add(['cyan', 'yellow', 'magenta'][i % 3]);
+  test.append(b);
+  ball.push(b);
+});
+document.onfullscreenchange = function (event) {
+  if (document.fullscreenElement) {
+    timer.resetHard();
+    debug('전체 화면');
+    hi = timer.setInterval(function () {
+      debug(`timer: ${timer.now().toFixed(4)} | ${timer.lifeTime().toFixed(4)}`);
+    }, TTT / NNN);
+    window.requestAnimationFrame(step);
+  } else {
+    timer.clearInterval(hi);
+  }
+}
+function step(timestamp) {
+  if (timer.now() > TTT) timer.reset();
+  for (let i = 0; i < NNN; i++) {
+    ball[i].style.left = `calc(${((((TTT * 3 / 2 + (TTT / NNN * i)) - timer.now()) % TTT) / TTT * 100)}% - 2.05rem)`;
+  }
+  if (document.fullscreenElement) {
+    window.requestAnimationFrame(step);
+  }
+}
+</script>
+<script>
+Array.from(document.querySelectorAll('.control-button')).map(function (button) {
+  if (button.onpointerdown !== undefined) {
+    button.onpointerdown = function (event) {
+      press();
+    }
+  } else if (button.ontouchstart !== undefined) {
+    button.ontouchstart = function (event) {
+      press();
+    }
+  } else {
+    button.onmousedown = function (event) {
+      press();
+    }
+  }
+});
+var keyDownState = {
+  [0x20]: false,
+  83: false,
+  76: false
+};
+window.onkeydown = function (event) {
+  if ([0x20, 83, 76].includes(event.keyCode) && !keyDownState[event.keyCode]) {
+    keyDownState[event.keyCode] = true;
+    press();
+  }
+}
+window.onkeyup = function (event) {
+  if ([0x20, 83, 76].includes(event.keyCode)) {
+    keyDownState[event.keyCode] = false;
+  }
+}
+
+window.onblur = function (event) {
+  timer.deactivate();
+}
+window.onclick = function (event) {
+  if (document.fullscreenElement && !timer.isActive()) {
+    timer.activate();
+  }
+}
+
+function press() {
+  debug(timer.lifeTime().toFixed(4));
+}
+/*
+main -> select -> game -> select
+
+main:
+bgm on
+
+select: 대결할 캐릭터
+select -> prepare -> loading
+
+game:
+init -> loop -> end
+*/
+
+/*
+raw input (pointerdown, mousedown, touchstart, keydown)  -> Input -> Controller -> Fix Data -> Apply UI
+
+
+*/
+var buttons = Array.from(document.querySelectorAll('.control-button'));
+buttons = { cyan: buttons[0], yellow: buttons[1], magenta: buttons[2] };
+
+var data = {
+  bpm: 60,
+  delay: 1000,
+  notes: [0, 1, 2, 4, 5]
+};
+
+</script>

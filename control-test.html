@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width user-scelable=0 initial-scale=1.0 maximum-scale=1.0">
+
+<script src="./pausable-timer.js"></script>
+<script>
+var types = { CYAN: 0, YELLOW: 1, MAGENTA: 2 };
+var scores = { PERFECT: 0, GOOD: 1, MISS: 2 };
+var { CYAN, YELLOW, MAGENTA } = types;
+var { PERFECT, GOOD, MISS } = scores;
+function former(a, b) {
+  return a.beat - b.beat;
+};
+function near(a, b) {
+  return Math.abs(a.delta) - Math.abs(b.delta);
+}
+var judger = {
+  // 기준
+  // 0 perfect 200 good 500 miss
+  rule: {
+    perfect: 200,
+    good: 500
+  },
+  // 현재 시각과 노래 데이터를 주고 입력을 주면
+  // 퍼펙트 굿 미스 를 판별하는 것
+  judge: function (currentTime, song, input) {
+    // 현재 시각과 근접한 판명 대상이 될 노트만 가져옴
+    var goodBound = this.rule.good;
+    var perfectBound = this.rule.perfect;
+    var bps = song.bpm / 60;
+    var targetNote = song.notes.map(function (note, index) {
+      var noteTime = note.beat * bps * 1000;
+      note.noteTime = noteTime;
+      note.index = index;
+      return note;
+    }).filter(function (note) {
+      if (note.invalid) return false;
+      return (currentTime - song.preDelay - goodBound < note.noteTime && note.noteTime < currentTime - song.preDelay + goodBound);
+    }).map(function (note) {
+      note.delta = note.noteTime - currentTime + song.preDelay;
+      return note;
+    }).sort(former)[0];
+    if (!targetNote) return null;
+    song.notes[targetNote.index].invalid = true;
+    if (targetNote.type !== input.type) return MISS;
+    var delta = targetNote.delta;
+    if (delta < -goodBound || goodBound < delta) return MISS;
+    else if (delta < -perfectBound || perfectBound < delta) return GOOD;
+    else return PERFECT;
+  }
+};
+var song = {
+  preDelay: 2 * 1000,
+  bpm: 60,
+  notes: [
+    { beat: 0, type: CYAN },
+    { beat: 1, type: CYAN },
+    { beat: 2, type: CYAN },
+    { beat: 2.5, type: CYAN },
+    { beat: 2.75, type: CYAN },
+    { beat: 3, type: CYAN },
+    { beat: 4, type: CYAN },
+  ]
+};
+function copySong(song) {
+  return {
+    preDelay: song.preDelay,
+    bpm: song.bpm,
+    notes: song.notes.map(function (note) {
+      return {
+        beat: note.beat,
+        type: note.type
+      };
+    })
+  };
+}
+var game = {
+  timer: new PausableTimer(),
+  speed: 100,
+  song: copySong(song)
+};
+
+setInterval(function () {
+  console.log('reset');
+  game.song = copySong(song);
+  game.timer.resetHard();
+  game.song.notes.forEach(function (note, index) {
+    var bps = game.song.bpm / 60;
+    var noteTime = note.beat * bps * 1000;
+    game.timer.setTimeout(function () {
+      if (game.song.notes[index].invalid) return;
+      console.log(MISS, game.timer.now());
+    }, noteTime + game.song.preDelay + judger.rule.good);
+  });
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: CYAN });
+    console.log(result, game.timer.now());
+  }, 2000);
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: CYAN });
+    console.log(result, game.timer.now());
+  }, 3100);
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: CYAN });
+    console.log(result, game.timer.now());
+  }, 3800);
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: YELLOW });
+    console.log(result, game.timer.now());
+  }, 4400);
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: CYAN });
+    console.log(result, game.timer.now());
+  }, 4700);
+  game.timer.setTimeout(function () {
+    var result = judger.judge(game.timer.now(), game.song, { type: CYAN });
+    console.log(result, game.timer.now());
+  }, 5300);
+}, 2000 + 6000 + 1000);
+</script>
