@@ -103,6 +103,10 @@ loading...
   background-size: auto 100%;
   background-position: center;
 }
+
+#game.paused * {
+  animation-play-state: paused;
+}
 </style>
 <div id="game" class="screen hide">
 <style>
@@ -678,6 +682,12 @@ var sound = {
     var player = document.querySelector('#player-' + this.count());
     playerWrapper.removeChild(player);
     this.increaseCount();
+  },
+  pause: function () {
+    player.pauseVideo();
+  },
+  play: function () {
+    player.playVideo();
   }
 };
 </script>
@@ -1019,6 +1029,24 @@ var game = {
     this.timer.resetHard();
 
     window.requestAnimationFrame(gameDraw);
+  },
+  pause: function () {
+    game.paused = true;
+    game.timer.deactivate();
+    var gameWrapper = document.querySelector('#game');
+    gameWrapper.classList.add('paused');
+    if (game.song.preDelay < game.timer.now()) {
+      sound.pause();
+    }
+  },
+  resume: function () {
+    game.paused = false;
+    game.timer.activate();
+    var gameWrapper = document.querySelector('#game');
+    gameWrapper.classList.remove('paused');
+    if (game.song.preDelay < game.timer.now()) {
+      sound.play();
+    }
   }
 };
 
