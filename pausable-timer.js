@@ -121,6 +121,7 @@ PausableTimer.prototype.clearInterval = function (id) {
 
 PausableTimer.prototype.deactivate = function () {
   var _this2 = this;
+  if (!this._isActive) return;
 
   Object.keys(this._timeouts).forEach(function (id) {
     var timeout = _this2._timeouts[id];
@@ -138,6 +139,7 @@ PausableTimer.prototype.deactivate = function () {
 
 PausableTimer.prototype.activate = function () {
   var _this3 = this;
+  if (this._isActive) return;
 
   this._isActive = true;
   this._deactivatedTime += this.getTime() - this._deactivatedTimeSet;
