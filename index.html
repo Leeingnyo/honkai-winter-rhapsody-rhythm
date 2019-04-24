@@ -438,7 +438,7 @@ loading...
   animation-duration: 0.5s;
   animation-delay: 0s;
   animation-iteration-count: infinite;
-  animation-timing-function: steps(4);
+  animation-timing-function: steps(1);
 }
 @keyframes walk {
    0% { background-image: url(./resources/bronya-walk-step-00.png); }
@@ -452,14 +452,14 @@ loading...
   animation-duration: 0.5s, 0.25s;
   animation-delay: 0.25s, 0s;
   animation-iteration-count: infinite, 1;
-  animation-timing-function: steps(2), steps(2);
+  animation-timing-function: steps(1), steps(1);
 }
 @keyframes kick {
   0% { background-image: url(./resources/bronya-jump-step-02.png); }
+  50% { background-image: url(./resources/bronya-jump-step-03.png); }
   100% { background-image: url(./resources/bronya-jump-step-02.png); }
 }
   /*
-  50% { background-image: url(./resources/bronya-jump-step-03.png); }
   */
 @keyframes jump {
   0% { background-image: url(./resources/bronya-jump-step-00.png); }
