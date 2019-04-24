@@ -21,8 +21,6 @@ body { font-size: 16px; }
 </head>
 <body>
 
-<div id="player"></div>
-
 <style>
 #wrapper {
   position: absolute;
@@ -34,6 +32,7 @@ body { font-size: 16px; }
   width: 100%;
   height: 100%;
   overflow: hidden;
+  z-index: 1;
 }
 
 #view {
@@ -71,7 +70,6 @@ iframe {
   display: none;
 }
 </style>
-
 <div id="debug" class="screen">
 </div>
 
@@ -675,6 +673,11 @@ var sound = {
   },
   prepare: function () {
     var playerWrapper = document.querySelector('#player');
+    if (!playerWrapper) {
+        playerWrapper = document.createElement('div');
+        playerWrapper.id = 'player';
+        document.body.append(playerWrapper);
+    }
     var player = document.createElement('div');
     player.id = 'player-' + this.count();
     playerWrapper.append(player);
