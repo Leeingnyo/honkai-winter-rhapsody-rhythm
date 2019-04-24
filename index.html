@@ -1230,6 +1230,7 @@ var ui = {
                 if (firstLoading) {
                 } else {
                   buffering = true;
+                  game.waitForVideo = true;
                   game.timer.deactivate();
                 }
               } break;
@@ -1244,6 +1245,7 @@ var ui = {
                   }, game.song.preDelay - (game.timer.getTime() - playtime));
                 } else {
                   if (buffering) {
+                    game.waitForVideo = false;
                     game.timer.activate();
                   }
                 }
@@ -1437,6 +1439,8 @@ game.combo = {
 </script>
 <script id="game-controller">
 game.input = function (type) {
+  if (game.paused || game.waitForVideo) return;
+
   var input = { type };
   var result = judger.judge(game.timer.now(), game.song, input);
   if (!result) {
