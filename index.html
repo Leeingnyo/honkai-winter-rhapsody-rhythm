@@ -115,6 +115,30 @@ loading...
   width: 100%;
 }
 
+.honkai-button {
+  border: none;
+  border-radius: 0.2rem;
+  background: #f9e052;
+  color: black;
+}
+.small-top-left-button {
+  position: absolute;
+  top: 0.1rem;
+  left: 0.3rem;
+  transform: skewX(-16deg);
+  width: 0.9rem;
+  height: 0.7rem;
+  border: 0.07rem solid white;
+  border-top: none;
+  border-bottom: none;
+}
+.small-top-left-button div {
+  transform: skewX(16deg);
+  font-weight: bold;
+  font-size: 0.3rem;
+  letter-spacing: 0.03rem;
+}
+
 .hp-guage-wrappers {
   position: absolute;
   top: 0.2rem;
@@ -168,6 +192,7 @@ loading...
 }
 </style>
 <div class="top">
+  <button class="honkai-button pause-button small-top-left-button"><div>||</div></button>
   <div class="hp-guage-wrappers">
     <div class="hp-guage-wrapper">
       <div class="hp-guage"></div>
@@ -1151,6 +1176,12 @@ document.querySelector('#prepare .back-button').onclick = function () {
   ui.prepare.toSelect();
 }
 
+document.querySelector('#game .pause-button').onclick = function () {
+  ui.game.toggle();
+  if (game.paused) game.pause();
+  else game.resume();
+}
+
 document.onfullscreenchange = function (event) {
   if (document.fullscreenElement) {
     debug('전체 화면');
@@ -1294,6 +1325,15 @@ var ui = {
     },
     end: function () {
       ui.game.toLoading();
+    },
+    toggle: function () {
+      var gameWrapper = document.querySelector('#game');
+      var pauseButtonContent = gameWrapper.querySelector('.pause-button div');
+      if (game.paused) {
+        pauseButtonContent.innerText = '>';
+      } else {
+        pauseButtonContent.innerText = '||';
+      }
     },
     createNotes: function (notes) {
       var wrapper = document.querySelector('.note-wrappers');
