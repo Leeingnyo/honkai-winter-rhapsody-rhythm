@@ -194,7 +194,7 @@
 
 /* to component */
 .ball-spawn {
-  background: url(../../types.jpg);
+  background: url(../../resources/types.jpg);
   background-size: 4rem;
   filter: brightness(1.5) blur(1px);
 }
