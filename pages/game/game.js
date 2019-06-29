@@ -31,7 +31,7 @@ class Game {
   constructor() {
     var gameTop = el('.game-top',
       this.pauseButton = el('button.pause-button.honkai-button.honkai-button--small-top-left-button',
-        el('div', '||')
+        this.pauseButtonText = el('div', '||')
       ),
       this.hpGuage = new (function () {
         this.el = el('.hp-guage-wrappers');
@@ -88,6 +88,16 @@ class Game {
       gameBottom,
       el('#horizontal-line')
     );
+
+    this.pauseButton.onclick = () => {
+      if (game.paused) {
+          this.pauseButtonText.textContent = '||';
+          game.resume();
+      } else {
+          this.pauseButtonText.textContent = '>';
+          game.pause(); // 이름 왜 이럼
+      }
+    };
 
     // TODO
     __bindButtons([
