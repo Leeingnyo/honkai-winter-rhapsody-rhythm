@@ -1,0 +1,39 @@
+class SelectCharacterOption {
+  constructor() {
+    this.el = el('li.select-character-list-item',
+      this.character = el('.select-character',
+        this.characterImage = el('img.select-character-image'),
+        this.characterName = el('span.select-character-name')
+      )
+    );
+
+    this.character.onclick = () => {
+      view.update('prepare', this.song);
+    };
+  }
+
+  update(song) {
+    this.characterName.textContent = song.characterName;
+
+    this.song = song;
+  }
+}
+
+class Select {
+  constructor() {
+    this.el = el('#select.screen',
+      this.backButton = el('button.back-button.winter-button', '뒤로'),
+      el('h2', '단계 선택'),
+      el('p', '공략할 캐릭터를 선택해주세요'),
+      this.characterList = list('ul.select-characters', SelectCharacterOption, 'name')
+    );
+
+    this.backButton.onclick = () => {
+      view.update('main');
+    }
+  }
+
+  update() {
+    this.characterList.update(songs);
+  }
+}

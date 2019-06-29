@@ -1,0 +1,17 @@
+.shield-guage-wrapper {
+  position: absolute;
+  top: 0.6rem;
+  left: calc(50% - 2.55rem);
+  transform: translateX(-50%) skewX(-20deg);
+  width: 4.4rem;
+  height: 0.1rem;
+  border-radius: 0.05rem;
+  background: #FFFFFF80;
+}
+.shield-guage {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 0.05rem;
+  background: #f9c83d;
+}

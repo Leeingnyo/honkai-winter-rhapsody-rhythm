@@ -1,0 +1,24 @@
+.honkai-button {
+  border: none;
+  border-radius: 0.2rem;
+  background: #f9e052;
+  color: black;
+}
+.honkai-button--small-top-left-button {
+  position: absolute;
+  top: 0.1rem;
+  left: 0.3rem;
+  transform: skewX(-16deg);
+  width: 0.9rem;
+  height: 0.7rem;
+  border: 0.07rem solid white;
+  border-top: none;
+  border-bottom: none;
+}
+.honkai-button--small-top-left-button div {
+  transform: skewX(16deg);
+  font-weight: bold;
+  font-size: 0.3rem;
+  letter-spacing: 0.03rem;
+}
+

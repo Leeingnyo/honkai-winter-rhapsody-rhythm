@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width user-scelable=0 initial-scale=1.0 maximum-scale=1.0">
+  <title>붕괴3rd 윈터 랩소디 리듬 게임</title>
+  <style id="reset">
+/* reset */
+body { margin: 0; }
+  </style>
+  <style id="unit-size">
+/* set unit size */
+/* 세로 */
+html { font-size: calc(10vw * 9 / 16); }
+@media screen and (min-aspect-ratio: 16/9) {
+/* 가로 */
+html { font-size: 10vh; }
+}
+
+body { font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<style>
+#wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+</style>
+<div id="wrapper">
+</div>
+<script>
+var wrapper = document.querySelector('#wrapper');
+</script>
+
+키설명<br>
+s(기계) 스페이스바(생물) l(이능)
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/redom/3.23.1/redom.min.js" integrity="sha256-sYynj2vjrs3CiZFnTn0hho1rRZCV2JiWHv3b5CTPFFo=" crossorigin="anonymous"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="./lib/pausable-timer.js"></script>
+<script id="utils" src="./lib/utils.js"></script>
+
+<script src="./data/game-variables.js"></script>
+<script src="./data/song-data.js"></script>
+
+<script src="./controllers/sound.js"></script>
+<script src="./controllers/judger.js"></script>
+<script src="./controllers/game.js"></script>
+
+<script>
+const { el, text, list, place, router, setChildren, mount, unmount } = redom;
+
+var player;
+var playtime;
+</script>
+
+<link rel="stylesheet" type="text/css" href="./components/combo/combo.css">
+<link rel="stylesheet" type="text/css" href="./components/button/honkai-button.css">
+<script src="./components/button/honkai-button.js"></script>
+
+<script src="./pages/end/end.js"></script>
+<link rel="stylesheet" type="text/css" href="./pages/game/game.css">
+<script src="./pages/game/game.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="./pages/loading/loading.css"> -->
+<script src="./pages/loading/loading.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="./pages/prepare/prepare.css"> -->
+<script src="./pages/prepare/prepare.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="./pages/select/select.css"> -->
+<script src="./pages/select/select.js"></script>
+<link rel="stylesheet" type="text/css" href="./pages/main/main.css">
+<script src="./pages/main/main.js"></script>
+<link rel="stylesheet" type="text/css" href="./pages/view/view.css">
+<script src="./pages/view/view.js"></script>
+</body>

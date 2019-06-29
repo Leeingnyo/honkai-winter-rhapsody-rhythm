@@ -1,0 +1,33 @@
+.hp-guage-wrappers {
+  position: absolute;
+  top: 0.2rem;
+  left: calc(50% - 0.5rem); transform: translateX(-50%) skewX(-20deg);
+}
+.hp-guage-wrapper {
+  width: 2.7rem;
+  height: 0.25rem;
+  background: #FFFFFF80;
+  border-radius: 0.05rem;
+}
+.hp-guage-wrapper[data-hp-stage="1"] {
+  background: ##f88f44;
+}
+.hp-guage-wrapper:first-child {
+  position: absolute;
+  top: 0; right: calc(100% + 0.1rem);
+}
+.hp-guage-wrapper:nth-child(2) {
+}
+.hp-guage-wrapper:nth-child(3) {
+  position: absolute;
+  top: 0; left: calc(100% + 0.1rem);
+}
+.hp-guage {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  border-radius: 0.05rem;
+}
+.hp-guage {
+  background: #1bbd96;
+}
