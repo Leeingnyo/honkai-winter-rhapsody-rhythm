@@ -334,7 +334,6 @@ var songs = [
     { beat: 93, type: YELLOW },
   ]
 },
-/*
 {
   name: '못찾겠다',
   characterName: '뉴턴',
@@ -346,7 +345,6 @@ var songs = [
   notes: [
   ]
 },
-*/
 {
   name: '',
   characterName: '오토벨라',
@@ -494,4 +492,84 @@ var songs = [
     { beat: 94, type: CYAN },
   ]
 },
+{
+  name: '못 찾겠다 ㅠㅠ',
+  characterName: '괴도',
+  characterId: 'karen',
+  message: '스페이드 지하감옥에는 범인 이외에 흉폭하고 진귀한 동물도 있다',
+  videoId: '',
+  preDelay: 4 * 1000,
+  bpm: 142,
+  notes: [
+  ]
+},
+{
+  name: '사쿠라 레이드',
+  characterName: '루시',
+  characterId: 'lucia',
+  message: '강자 앞에서 탈주병이 되는 게 뭐가 부끄러운 거지?',
+  videoId: 'rax5WZgKyTs',
+  preDelay: 4 * 1000,
+  bpm: 64,
+  notes: [
+    /*
+    { beat: 0, type: CYAN },
+    { beat: 1, type: MAGENTA },
+    { beat: 2, type: CYAN },
+    { beat: 3, type: MAGENTA },
+
+    { beat: 4, type: CYAN },
+    { beat: 5, type: MAGENTA },
+    { beat: 6, type: CYAN },
+    { beat: 7, type: MAGENTA },
+
+    { beat: 8, type: CYAN },
+    { beat: 9, type: MAGENTA },
+    { beat: 10, type: CYAN },
+    { beat: 11, type: MAGENTA },
+
+    { beat: 12, type: CYAN },
+    { beat: 13, type: MAGENTA },
+    { beat: 14, type: MAGENTA },
+    { beat: 15, type: MAGENTA },
+
+    { beat: 16, type: CYAN },
+    { beat: 17, type: MAGENTA },
+    { beat: 17.5, type: CYAN },
+
+    { beat: 20, type: YELLOW },
+    { beat: 21, type: CYAN },
+    { beat: 22, type: MAGENTA },
+    { beat: 22.5, type: CYAN },
+
+    { beat: 24, type: MAGENTA },
+    { beat: 24.5, type: CYAN },
+    { beat: 25, type: CYAN },
+    { beat: 26, type: MAGENTA },
+    { beat: 27, type: CYAN },
+
+    { beat: 28, type: MAGENTA },
+    { beat: 29, type: CYAN },
+
+    { beat: 32, type: MAGENTA },
+
+    { beat: 36, type: YELLOW },
+    { beat: 37, type: YELLOW },
+    { beat: 37.5, type: YELLOW },
+    */
+  ]
+},
+/*
+{
+  name: '',
+  characterName: '',
+  characterId: '',
+  message: '',
+  videoId: '',
+  preDelay: 4 * 1000,
+  bpm: 104,
+  notes: [
+  ]
+},
+*/
 ];
