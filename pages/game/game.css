@@ -1,0 +1,345 @@
+#game {
+  background: url(../../resources/background-snow.png);
+  background-size: auto 100%;
+  background-position: center;
+}
+
+#game.paused * {
+  animation-play-state: paused;
+}
+
+.game-top {
+  position: absolute;
+  width: 100%;
+}
+
+/* state */
+.game-stage {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 5rem;
+}
+
+/* to component */
+.monster {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 7rem);
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+}
+
+.damage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%) skewX(-7deg);
+  font-weight: bold;
+  color: #afd4e3d0;
+
+  /* webkit only */
+  background: -webkit-linear-gradient(90deg, white 30%, #afd4e3, white 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+}
+
+.monster {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 7rem);
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+}
+
+.damage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%) skewX(-7deg);
+  font-weight: bold;
+  color: #afd4e3d0;
+
+  /* webkit only */
+  background: -webkit-linear-gradient(90deg, white 30%, #afd4e3, white 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+}
+
+.judge-board-wrapper {
+  position: absolute;
+  top: calc(50% - -1.1rem);
+  left: calc(50% - 1.9rem);
+  transform: translate(-50%, -50%) perspective(3rem) rotateX(53deg) skewX(-20deg);
+  height: 1.9rem;
+  background: #4444ee20;;
+  width: 1rem;
+}
+
+.note-line {
+  position: absolute;
+  top: calc(50% - 1.95rem); left: 0;
+  border-top: 1px solid #FFF8;
+  width: 100%;
+}
+
+.floor-line {
+  position: absolute;
+  top: calc(50% + 1.2rem); left: 0;
+  border-top: 1px solid red;
+  width: 100%;
+}
+
+.ball {
+  position: absolute;
+  top: calc(50% - 1.95rem);
+  transform: translate(-50%, -50%);
+  width: 1rem; height: 1rem;
+  border-radius: 100%;
+}
+.indicator-wrapper {
+  left: calc(50% - 2.05rem); 
+}
+.indicator {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 2px solid yellow;
+  border-radius: 100%;
+}
+
+.effect-score-name {
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  left: 50%;
+  transform: translate(-50%, -50%) skewX(-12deg);
+  color: white;
+  font-size: 0.5rem;
+  font-weight: bold;
+  opacity: 1;
+  transition: top 2s cubic-bezier(0.2, 0.8, 0.8, 0.2), opacity 0.3s ease;
+}
+.effect-score-name.miss {
+  text-shadow: 1px 1px #0008, 1px 0px #0008, 1px -1px #0008, 0px 1px #0008, 0px -1px #0008, -1px 1px #0008, -1px 0px #0008, -1px -1px #0008;
+}
+.effect-score-name.perfect {
+  text-shadow: 1px 1px orange, 1px 0px orange, 1px -1px orange, 0px 1px orange, 0px -1px orange, -1px 1px orange, -1px 0px orange, -1px -1px orange;
+}
+.effect-score-name.good {
+  text-shadow: 1px 1px #09c6e4, 1px 0px #09c6e4, 1px -1px #09c6e4, 0px 1px #09c6e4, 0px -1px #09c6e4, -1px 1px #09c6e4, -1px 0px #09c6e4, -1px -1px #09c6e4;
+}
+.effect-score-name.fade-out {
+  opacity: 0;
+}
+.effect-score-name.appeared {
+  top: calc(50% - 1.5rem);
+}
+
+.effect-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 40%;
+  border-radius: 100%;
+  box-shadow: none;
+  opacity: 1;
+  transition: width 0.6s cubic-bezier(0, 0, 0.2, 1), height 0.6s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.6s cubic-bezier(0, 0, 0.2, 1), opacity 1s ease;
+}
+.effect-circle.cyan {
+  width: 350%;
+  height: 350%;
+  box-shadow:
+      0px 0px 0.25rem cyan inset,
+      0px 0px 0.3rem cyan inset,
+      0px 0px 1rem cyan inset,
+      0px 0px 0.1rem cyan,
+      0px 0px 0.15rem cyan,
+      0px 0px 0.2rem cyan;
+}
+.effect-circle.yellow {
+  width: 300%;
+  height: 300%;
+  box-shadow:
+      0px 0px 0.25rem yellow inset,
+      0px 0px 0.3rem yellow inset,
+      0px 0px 1rem yellow inset,
+      0px 0px 0.1rem yellow,
+      0px 0px 0.15rem yellow,
+      0px 0px 0.2rem yellow;
+}
+.effect-circle.magenta {
+  width: 300%;
+  height: 300%;
+  box-shadow:
+      0px 0px 0.25rem magenta inset,
+      0px 0px 0.3rem magenta inset,
+      0px 0px 1rem magenta inset,
+      0px 0px 0.1rem magenta,
+      0px 0px 0.15rem magenta,
+      0px 0px 0.2rem magenta;
+}
+.effect-circle.fade-out {
+  opacity: 0;
+}
+
+/* to component */
+.ball-spawn {
+  background: url(../../resources/types.jpg);
+  background-size: 4rem;
+  filter: brightness(1.5) blur(1px);
+}
+.ball-spawn.cyan {
+  background-position: 77.5% 64.5%;
+}
+.ball-spawn.yellow {
+  background-position: 22.5% 64.5%;
+}
+.ball-spawn.magenta {
+  background-position: 50% 21%;
+}
+
+.note-wrappers {
+}
+.note-wrapper {
+  position: absolute;
+  top: 50%;
+}
+.character {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  width: 2.1rem;
+  height: 2.1rem;
+  bottom: -1.2rem;
+
+  transition: left 1s ease;
+}
+.character.bronya {
+  background-position: center 30%;
+  background-size: 150%;
+}
+.character.bronya.walk {
+  animation-name: walk;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+}
+@keyframes walk {
+   0% { background-image: url(../../resources/bronya-walk-step-00.png); }
+  25% { background-image: url(../../resources/bronya-walk-step-01.png); }
+  50% { background-image: url(../../resources/bronya-walk-step-02.png); }
+  75% { background-image: url(../../resources/bronya-walk-step-03.png); }
+  100% { background-image: url(../../resources/bronya-walk-step-00.png); }
+}
+.character.bronya.jump {
+  animation-name: kick, jump;
+  animation-duration: 0.5s, 0.25s;
+  animation-delay: 0.25s, 0s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: steps(1), steps(1);
+}
+@keyframes kick {
+  0% { background-image: url(../../resources/bronya-jump-step-02.png); }
+  100% { background-image: url(../../resources/bronya-jump-step-02.png); }
+}
+  /*
+  50% { background-image: url(../../resources/bronya-jump-step-03.png); }
+  */
+@keyframes jump {
+  0% { background-image: url(../../resources/bronya-jump-step-00.png); }
+  50% { background-image: url(../../resources/bronya-jump-step-01.png); }
+  100% { background-image: url(../../resources/bronya-jump-step-00.png); }
+}
+
+.attack-wrapper {
+  position: absolute;
+  top: 50%;
+}
+.attack-wrapper .character {
+}
+.attack-wrapper.good .character {
+  left: -4rem;
+  transition-duration: 1.5s;
+}
+.attack-wrapper.perfect .character {
+  left: -4rem;
+  transition-duration: 1s;
+}
+
+/* bottom */
+.energy-guage-wrapper {
+  position: absolute;
+  bottom: 2.53rem;
+  left: 50%; transform: translateX(-50%) skewX(-20deg);
+
+  width: 5rem;
+  height: 0.2rem;
+  border-radius: 0.05rem;
+  background: #FFF8;
+  overflow: hidden;
+}
+.energy-guage {
+  height: 100%;
+  width: 50%;
+  border-radius: 0.02rem;
+  background: #25f276;
+}
+/* to component */
+
+#controls {
+  position: absolute;
+  bottom: 0.41rem;
+  left: 50%; transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 17.18rem;
+  max-width: 99%;
+  height: 1.55rem;
+  opacity: 0.7;
+}
+.control-button {
+  border: none;
+  outline: none;
+  border-radius: 0.1rem;
+}
+#cyan-button {
+  width: 3.46rem;
+  background: #0CF;
+}
+#cyan-button:active {
+  background: #0CF8;
+}
+#yellow-button {
+  width: 9.61rem;
+  margin: 0 0.283rem;
+  background: #FC0;
+}
+#yellow-button:active {
+  background: #FC08;
+}
+#magenta-button {
+  width: 3.46rem;
+  background: #F6F;
+}
+#magenta-button:active {
+  background: #F6F8;
+}
+
+
+#horizontal-line {
+  position: absolute;
+  top: calc(50% - 1.95rem); left: 0;
+  border-top: 1px solid #FFF8;
+  width: 100%;
+}
