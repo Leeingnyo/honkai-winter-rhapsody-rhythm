@@ -10,9 +10,11 @@ class Prepare {
     );
 
     this.backButton.onclick = () => {
+      effect.play('clickButton');
       view.update('select');
     };
     this.startButton.onclick = () => {
+      bgm.stop();
       effect.play('start');
       if (!this.song.videoId) {
         alert('노래 영상을 찾지 못 했어...');

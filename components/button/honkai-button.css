@@ -38,7 +38,7 @@
 
 .winter-button {
   position: relative;
-  width: 1.9rem;
+  min-width: 1.9rem;
   padding: 0.1rem;
   border: 3px double #444;
   border-radius: 0.2rem;

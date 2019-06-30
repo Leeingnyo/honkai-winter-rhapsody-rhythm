@@ -2,3 +2,10 @@
   background: aliceblue;
   padding: 0.6rem;
 }
+
+#main .fullscreen-button {
+  margin-right: 0.2rem;
+}
+#main .start-button {
+  margin-right: 0.2rem;
+}

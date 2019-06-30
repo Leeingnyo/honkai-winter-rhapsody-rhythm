@@ -100,12 +100,82 @@ var effect = {
       setTimeout(resolve, 20000);
     }));
     this.data.start.src = './resources/honkai-start.mp3';
+
+    // 버튼 클릭
+    this.data.clickButton = document.createElement('audio');
+    this.loadingPromises.push(new Promise(resolve => {
+      this.data.clickButton.oncanplaythrough = () => {
+        resolve();
+      };
+      setTimeout(resolve, 20000);
+    }));
+    this.data.clickButton.src = './resources/honkai-click-button.mp3';
   },
   play: function (name) {
-    console.log(this.data[name]);
     this.data[name].currentTime = 0;
     this.data[name].play();
   }
 };
 
 effect.init();
+
+var bgm = {
+  bgmCount: 0,
+  init: function () {
+  },
+  count: function () {
+    return this.soundCount;
+  },
+  increaseCount: function () {
+    this.soundCount++;
+  },
+  prepare: function () {
+    var playerWrapper = document.querySelector('#main-bgm');
+    if (!playerWrapper) {
+        playerWrapper = document.createElement('div');
+        playerWrapper.id = 'main-bgm';
+        document.body.append(playerWrapper);
+    }
+    var player = document.createElement('div');
+    player.id = 'main-bgm-' + this.count();
+    playerWrapper.append(player);
+  },
+  cleanup: function () {
+    var playerWrapper = document.querySelector('#main-bgm');
+    var player = document.querySelector('#main-bgm-' + this.count());
+    playerWrapper.removeChild(player);
+    this.increaseCount();
+  },
+  pause: function () {
+    mainBgm.pauseVideo();
+  },
+  play: function () {
+    mainBgm.playVideo();
+  },
+  stop: function () {
+    mainBgm.stopVideo();
+  }
+};
+
+var mainBgm;
+bgm.prepare();
+function onYouTubeIframeAPIReady() {
+  mainBgm = new YT.Player('main-bgm-' + bgm.count(), {
+    height: '360',
+    width: '640',
+    videoId: 'trL9v-Tryeo',
+    playerVars: {
+      playlist: 'trL9v-Tryeo',
+      loop: 1
+    },
+    events: {
+      onReady: playerReady,
+    }
+  });
+
+  function playerReady() {
+    mainBgm.setVolume(20);
+    mainBgm.setLoop(true);
+    bgm.play();
+  }
+}

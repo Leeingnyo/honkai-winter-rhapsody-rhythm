@@ -8,6 +8,7 @@ class SelectCharacterOption {
     );
 
     this.character.onclick = () => {
+      effect.play('clickButton');
       view.update('prepare', this.song);
     };
   }
@@ -37,6 +38,7 @@ class Select {
     );
 
     this.backButton.onclick = () => {
+      effect.play('clickButton');
       view.update('main');
     }
   }

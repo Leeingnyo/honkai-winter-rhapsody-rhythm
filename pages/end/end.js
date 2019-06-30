@@ -4,6 +4,7 @@ class End {
   }
 
   update() {
+    bgm.play();
     view.update('select');
     sound.cleanup();
   }
