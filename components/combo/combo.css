@@ -14,7 +14,7 @@
 
   transition: opacity 0.6s ease;
 }
-.combo.hide {
+.combo--hide {
   display: none;
 }
 .combo-count {

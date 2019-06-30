@@ -57,7 +57,7 @@ class Game {
           // el('.damage', '309')
         )
       ),
-      el('.combo.hide',
+      el('.combo.combo--hide',
         el('span.combo-count'),
         el('span.combo-label', 'COMBO')
       ),
@@ -125,10 +125,10 @@ class Game {
 
     comboWrapper.classList.remove('fade-out');
     if (!count) {
-      comboWrapper.classList.add('hide');
+      comboWrapper.classList.add('combo--hide');
       return;
     }
-    comboWrapper.classList.remove('hide');
+    comboWrapper.classList.remove('combo--hide');
     var countDom = comboWrapper.querySelector('.combo-count');
 
     this.__update_combo_timeout = game.timer.setTimeout(function () {
