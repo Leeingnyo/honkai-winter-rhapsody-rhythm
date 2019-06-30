@@ -218,8 +218,9 @@ var songs = [
 },
 {
   name: 'BGM 4',
-  characterName: '식객 차차',
-  characterId: 'azai-chacha',
+  characterName: '배달원 사나다',
+  characterId: 'yukimura',
+  message: '배달 음식을 위해서라도 널 되찾고 말 테다!',
   videoId: '881RW7ceE3o',
   preDelay: 4 * 1000,
   bpm: 104,
