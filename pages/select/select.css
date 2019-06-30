@@ -70,6 +70,10 @@
 .select-book h2 {
   margin: 0;
   color: #444;
+  font-size: 0.5rem;
+}
+.select-book p {
+  font-size: 0.3rem;
 }
 
 .select-book-left {

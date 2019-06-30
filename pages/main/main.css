@@ -3,6 +3,13 @@
   box-sizing: border-box;
   padding: 0.6rem;
 }
+#main h2 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+#main p {
+  font-size: 0.4rem;
+}
 
 #main .fullscreen-button {
   margin-right: 0.2rem;
