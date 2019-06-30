@@ -2,8 +2,8 @@ class SelectCharacterOption {
   constructor() {
     this.el = el('li.select-character-list-item',
       this.character = el('.select-character',
-        this.characterImage = el('img.select-character-image'),
-        this.characterName = el('span.select-character-name')
+        this.characterImage = el('div.select-character-image'),
+        this.characterName = el('div.select-character-name')
       )
     );
 
@@ -14,6 +14,7 @@ class SelectCharacterOption {
 
   update(song) {
     this.characterName.textContent = song.characterName;
+    this.characterImage.style.backgroundImage = 'url(./resources/head/' + song.characterId + '.png)';
 
     this.song = song;
   }
@@ -23,9 +24,16 @@ class Select {
   constructor() {
     this.el = el('#select.screen',
       this.backButton = el('button.back-button.winter-button', '뒤로'),
-      el('h2', '단계 선택'),
-      el('p', '공략할 캐릭터를 선택해주세요'),
-      this.characterList = list('ul.select-characters', SelectCharacterOption, 'name')
+      el('.select-green'),
+      el('.select-book',
+        el('.select-book-left',
+          el('h2', '단계 선택'),
+          el('p', '공략할 캐릭터를 선택해주세요'),
+        ),
+        el('.select-book-right',
+          this.characterList = list('ul.select-character-list', SelectCharacterOption, 'name')
+        )
+      )
     );
 
     this.backButton.onclick = () => {

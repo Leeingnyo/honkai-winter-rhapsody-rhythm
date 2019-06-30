@@ -22,3 +22,28 @@
   letter-spacing: 0.03rem;
 }
 
+.winter-button {
+  width: 1.9rem;
+  padding: 0.1rem;
+  border: 3px double #444;
+  border-radius: 0.2rem;
+  font-weight: bold;
+  font-size: 0.3rem;
+  background: gold;
+}
+
+.back-button.winter-button::before {
+  content: "<";
+  margin-right: 0.1rem;
+}
+.back-button.winter-button::after {
+  content: "B A C K";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0.25rem;
+  font-size: 0.1rem;
+  color: #666;
+}
