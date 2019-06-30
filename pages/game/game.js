@@ -19,7 +19,17 @@ class Note {
       } break;
     }
 
-    this.character.classList.add('bronya');
+    switch (note.type) {
+      case CYAN: {
+        this.character.classList.add('aichan');
+      } break;
+      case YELLOW: {
+        this.character.classList.add('sakura');
+      } break;
+      case MAGENTA: {
+        this.character.classList.add('bronya');
+      } break;
+    }
     this.character.classList.add('walk');
 
     this.el.dataset.noteTime = note.noteTime;

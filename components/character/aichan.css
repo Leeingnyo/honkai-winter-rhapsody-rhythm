@@ -1,0 +1,37 @@
+.character.aichan {
+  background-position: center 30%;
+  background-size: 150%;
+}
+.character.aichan.walk {
+  animation-name: aichan-walk;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+}
+@keyframes aichan-walk {
+   0% { background-image: url(../../resources/aichan-walk-step-00.png); }
+  25% { background-image: url(../../resources/aichan-walk-step-01.png); }
+  50% { background-image: url(../../resources/aichan-walk-step-02.png); }
+  75% { background-image: url(../../resources/aichan-walk-step-01.png); }
+  100% { background-image: url(../../resources/aichan-walk-step-00.png); }
+}
+.character.aichan.jump {
+  animation-name: aichan-kick, aichan-jump;
+  animation-duration: 0.5s, 0.25s;
+  animation-delay: 0.25s, 0s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: steps(1), steps(1);
+}
+@keyframes aichan-kick {
+  0% { background-image: url(../../resources/aichan-jump-step-02.png); }
+  100% { background-image: url(../../resources/aichan-jump-step-02.png); }
+}
+  /*
+  50% { background-image: url(../../resources/aichan-jump-step-03.png); }
+  */
+@keyframes aichan-jump {
+  0% { background-image: url(../../resources/aichan-jump-step-00.png); }
+  50% { background-image: url(../../resources/aichan-jump-step-01.png); }
+  100% { background-image: url(../../resources/aichan-jump-step-00.png); }
+}

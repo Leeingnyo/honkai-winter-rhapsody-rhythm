@@ -1,0 +1,37 @@
+.character.sakura {
+  background-position: center 30%;
+  background-size: 150%;
+}
+.character.sakura.walk {
+  animation-name: sakura-walk;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(1);
+}
+@keyframes sakura-walk {
+   0% { background-image: url(../../resources/sakura-walk-step-00.png); }
+  25% { background-image: url(../../resources/sakura-walk-step-01.png); }
+  50% { background-image: url(../../resources/sakura-walk-step-02.png); }
+  75% { background-image: url(../../resources/sakura-walk-step-01.png); }
+  100% { background-image: url(../../resources/sakura-walk-step-00.png); }
+}
+.character.sakura.jump {
+  animation-name: sakura-kick, sakura-jump;
+  animation-duration: 0.5s, 0.25s;
+  animation-delay: 0.25s, 0s;
+  animation-iteration-count: infinite, 1;
+  animation-timing-function: steps(1), steps(1);
+}
+@keyframes sakura-kick {
+  0% { background-image: url(../../resources/sakura-jump-step-02.png); }
+  100% { background-image: url(../../resources/sakura-jump-step-02.png); }
+}
+  /*
+  50% { background-image: url(../../resources/sakura-jump-step-03.png); }
+  */
+@keyframes sakura-jump {
+  0% { background-image: url(../../resources/sakura-jump-step-00.png); }
+  50% { background-image: url(../../resources/sakura-jump-step-01.png); }
+  100% { background-image: url(../../resources/sakura-jump-step-00.png); }
+}

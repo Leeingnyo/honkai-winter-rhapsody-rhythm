@@ -223,43 +223,6 @@
 
   transition: left 1s ease;
 }
-.character.bronya {
-  background-position: center 30%;
-  background-size: 150%;
-}
-.character.bronya.walk {
-  animation-name: walk;
-  animation-duration: 0.5s;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps(1);
-}
-@keyframes walk {
-   0% { background-image: url(../../resources/bronya-walk-step-00.png); }
-  25% { background-image: url(../../resources/bronya-walk-step-01.png); }
-  50% { background-image: url(../../resources/bronya-walk-step-02.png); }
-  75% { background-image: url(../../resources/bronya-walk-step-03.png); }
-  100% { background-image: url(../../resources/bronya-walk-step-00.png); }
-}
-.character.bronya.jump {
-  animation-name: kick, jump;
-  animation-duration: 0.5s, 0.25s;
-  animation-delay: 0.25s, 0s;
-  animation-iteration-count: infinite, 1;
-  animation-timing-function: steps(1), steps(1);
-}
-@keyframes kick {
-  0% { background-image: url(../../resources/bronya-jump-step-02.png); }
-  100% { background-image: url(../../resources/bronya-jump-step-02.png); }
-}
-  /*
-  50% { background-image: url(../../resources/bronya-jump-step-03.png); }
-  */
-@keyframes jump {
-  0% { background-image: url(../../resources/bronya-jump-step-00.png); }
-  50% { background-image: url(../../resources/bronya-jump-step-01.png); }
-  100% { background-image: url(../../resources/bronya-jump-step-00.png); }
-}
 
 .attack-wrapper {
   position: absolute;
