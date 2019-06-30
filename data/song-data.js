@@ -559,6 +559,85 @@ var songs = [
     */
   ]
 },
+{
+  name: '노래가 없어',
+  characterName: '아인스',
+  characterId: 'einstein',
+  message: '그녀는 가짜 인간입니다. 감정이 없지요',
+  videoId: '',
+  preDelay: 4 * 1000,
+  bpm: 104,
+  notes: [
+  ]
+},
+{
+  name: 'BGM 7',
+  characterName: '고양이소녀',
+  characterId: 'schrodinger',
+  message: '상자 안에 고양이가 있다고 생각했어? 사실은 네코무스메야!',
+  videoId: 'gdSsalQOku8',
+  preDelay: 4 * 1000,
+  bpm: 117,
+  notes: [
+    // 귀찮
+  ]
+},
+{
+  name: 'BGM 13',
+  characterName: '테술라',
+  characterId: 'tesla',
+  message: '그녀의 다음 대사는: 불쌍한 내 인생~',
+  videoId: '-K1lT97XrvU',
+  preDelay: 4 * 1000,
+  bpm: 121,
+  notes: [
+    // 추후
+  ]
+},
+{
+  name: '히메코 붕괴능 각성',
+  characterName: '지하감옥 간수장',
+  characterId: 'ryouma',
+  message: '그 무엇도 용사의 발걸음을 멈추게 할 수 없어! 없다고!',
+  videoId: 'cjVv0dBkvpQ',
+  preDelay: 4 * 1000,
+  bpm: 143,
+  notes: [
+  ]
+},
+{
+  name: 'BGM 12',
+  characterName: '아이쨩',
+  characterId: 'aichan',
+  message: '이 모든 걸 끝낼 때가 되었어, 아이쨩!',
+  videoId: '4iAFJeEqcB4',
+  preDelay: 4 * 1000,
+  bpm: 127,
+  notes: [
+  ]
+},
+{
+  name: '',
+  characterName: '임시',
+  characterId: 'bronya',
+  message: '또, 또, 또, 대체 몇 번을 반복해야 하는 거야?',
+  videoId: '',
+  preDelay: 4 * 1000,
+  bpm: 104,
+  notes: [
+  ]
+},
+{
+  name: '',
+  characterName: '임시',
+  characterId: 'mei',
+  message: '해피 윈터!',
+  videoId: 't2Yf5GzSxzo',
+  preDelay: 4 * 1000,
+  bpm: 119,
+  notes: [
+  ]
+},
 /*
 {
   name: '',
