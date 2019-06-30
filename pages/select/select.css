@@ -1,12 +1,18 @@
 .select-character-name {
   position: absolute;
   bottom: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: calc(100% + 0.2rem);
+  min-height: 0.3rem;
+  box-sizing: border-box;
+  padding: 0.1rem;
   background: black;
-  text-align: center;
   color: white;
   border-radius: 10%;
   word-break: keep-all;
+  font-size: 0.25rem;
 }
 
 .select-character-image {
