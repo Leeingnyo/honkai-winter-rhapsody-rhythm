@@ -19,16 +19,11 @@ class Loading {
     // request to sound manager for loading
     // request to image manager for loading
     function playerReady() {
-      Promise.all([new Promise((resolve) => {
-        clickSounds.oncanplaythrough = () => {
-          resolve();
-        };
-      })]).then(() => {
+      Promise.all([... effect.loadingPromises]).then(() => {
         view.update('game', gameConfig);
+        player.setVolume(30);
         ui.game = view.router.view; // FIXME
       });
-
-      clickSounds.src = './resources/honkai-click-effect-cyan.mp3';
     }
 
     //////

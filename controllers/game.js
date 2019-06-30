@@ -83,10 +83,23 @@ game.input = function (type) {
   var input = { type };
   var result = judger.judge(game.timer.now(), game.song, input);
   if (!result) {
+    effect.play('clickEffectVoid');
     return;
   }
   var score = result.score;
   var note = result.note;
+
+  if (score === MISS) {
+    effect.play('clickEffectMiss');
+  } else if (score === GOOD) {
+    effect.play('clickEffectGood');
+  } else if (note.type === CYAN) { // score is PERFECT
+    effect.play('clickEffectCyan');
+  } else if (note.type === YELLOW) {
+    effect.play('clickEffectYellow');
+  } else { // magenta
+    effect.play('clickEffectMagenta');
+  }
 
   if (score !== MISS) {
     game.combo.updateCombo();
