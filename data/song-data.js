@@ -333,5 +333,165 @@ var songs = [
     { beat: 92.5, type: YELLOW },
     { beat: 93, type: YELLOW },
   ]
-}
+},
+/*
+{
+  name: '못찾겠다',
+  characterName: '뉴턴',
+  characterId: 'newton',
+  message: '사과야 사과. 나의 머리 위로 올라와',
+  videoId: '',
+  preDelay: 4 * 1000,
+  bpm: 104,
+  notes: [
+  ]
+},
+*/
+{
+  name: '',
+  characterName: '오토벨라',
+  characterId: 'ottobella',
+  message: '이세계에서 왔다고? 나의 파티에 가입해!',
+  videoId: 'kUZHgXNis0E',
+  preDelay: 4 * 1000,
+  bpm: 123,
+  notes: [
+    { beat: 0, type: CYAN },
+    { beat: 1, type: MAGENTA },
+    { beat: 2, type: CYAN },
+    { beat: 3, type: MAGENTA },
+
+    { beat: 4, type: CYAN },
+    { beat: 5, type: MAGENTA },
+    { beat: 6, type: CYAN },
+    { beat: 7, type: MAGENTA },
+
+    { beat: 8, type: CYAN },
+    { beat: 9, type: MAGENTA },
+    { beat: 10, type: CYAN },
+    { beat: 11, type: MAGENTA },
+
+    { beat: 12, type: CYAN },
+    { beat: 13, type: MAGENTA },
+    { beat: 14, type: CYAN },
+    { beat: 15, type: MAGENTA },
+
+    { beat: 16, type: CYAN },
+    { beat: 16.75, type: CYAN },
+    { beat: 17.5, type: CYAN },
+    { beat: 18.25, type: CYAN },
+    { beat: 19, type: CYAN },
+
+    { beat: 20, type: MAGENTA },
+    { beat: 20.75, type: MAGENTA },
+    { beat: 21.5, type: MAGENTA },
+    { beat: 22.25, type: MAGENTA },
+    { beat: 23, type: MAGENTA },
+
+    { beat: 24, type: CYAN },
+    { beat: 24.75, type: CYAN },
+    { beat: 25.5, type: CYAN },
+    { beat: 26.25, type: CYAN },
+    { beat: 27, type: CYAN },
+
+    { beat: 28, type: MAGENTA },
+    { beat: 28.75, type: MAGENTA },
+    { beat: 29.5, type: MAGENTA },
+    { beat: 30.25, type: MAGENTA },
+    { beat: 31, type: MAGENTA },
+
+    { beat: 32, type: CYAN },
+    { beat: 33, type: MAGENTA },
+    { beat: 34, type: CYAN },
+    { beat: 35, type: MAGENTA },
+
+    { beat: 36, type: CYAN },
+    { beat: 37, type: MAGENTA },
+    { beat: 38, type: CYAN },
+    { beat: 39, type: MAGENTA },
+
+    { beat: 40, type: CYAN },
+    { beat: 41, type: MAGENTA },
+    { beat: 42, type: CYAN },
+    { beat: 43, type: MAGENTA },
+
+    { beat: 44, type: YELLOW },
+    { beat: 44.75, type: YELLOW },
+    { beat: 45.5, type: YELLOW },
+    { beat: 46.25, type: YELLOW },
+    { beat: 47, type: YELLOW },
+
+    { beat: 48, type: CYAN },
+    { beat: 48.5, type: CYAN },
+    { beat: 49, type: MAGENTA },
+    { beat: 50, type: CYAN },
+    { beat: 51, type: MAGENTA },
+
+    { beat: 52, type: CYAN },
+    { beat: 52.5, type: CYAN },
+    { beat: 53, type: MAGENTA },
+    { beat: 54, type: CYAN },
+    { beat: 55, type: MAGENTA },
+
+    { beat: 56, type: CYAN },
+    { beat: 56.5, type: CYAN },
+    { beat: 57, type: MAGENTA },
+    { beat: 58, type: CYAN },
+    { beat: 59, type: MAGENTA },
+
+    { beat: 60, type: CYAN },
+    { beat: 60.5, type: CYAN },
+    { beat: 61, type: MAGENTA },
+    { beat: 62, type: CYAN },
+    { beat: 62.5, type: MAGENTA },
+    { beat: 63, type: CYAN },
+    { beat: 63.25, type: MAGENTA },
+
+    { beat: 64, type: CYAN },
+    { beat: 64.5, type: CYAN },
+    { beat: 65, type: YELLOW },
+    { beat: 66, type: CYAN },
+    { beat: 67, type: YELLOW },
+
+    { beat: 68, type: CYAN },
+    { beat: 68.5, type: CYAN },
+    { beat: 69, type: YELLOW },
+    { beat: 70, type: CYAN },
+    { beat: 71, type: YELLOW },
+
+    { beat: 72, type: CYAN },
+    { beat: 72.5, type: CYAN },
+    { beat: 73, type: YELLOW },
+    { beat: 74, type: CYAN },
+    { beat: 75, type: YELLOW },
+
+    { beat: 76, type: CYAN },
+    { beat: 77, type: MAGENTA },
+    { beat: 78, type: CYAN },
+    { beat: 78.5, type: MAGENTA },
+    { beat: 79, type: CYAN },
+    { beat: 79.25, type: MAGENTA },
+    { beat: 79.5, type: CYAN },
+    { beat: 79.75, type: MAGENTA },
+
+    { beat: 80, type: CYAN },
+    { beat: 81, type: MAGENTA },
+    { beat: 82, type: CYAN },
+    { beat: 83, type: MAGENTA },
+
+    { beat: 84, type: CYAN },
+    { beat: 85, type: MAGENTA },
+    { beat: 86, type: CYAN },
+    { beat: 87, type: MAGENTA },
+
+    { beat: 88, type: CYAN },
+    { beat: 89, type: MAGENTA },
+    { beat: 90, type: CYAN },
+    { beat: 91, type: MAGENTA },
+
+    { beat: 92, type: CYAN },
+    { beat: 93, type: MAGENTA },
+    { beat: 94, type: CYAN },
+  ]
+},
 ];
