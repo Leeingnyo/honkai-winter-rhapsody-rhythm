@@ -19,7 +19,11 @@ class Loading {
     // request to sound manager for loading
     // request to image manager for loading
     function playerReady() {
-      Promise.all([... effect.loadingPromises]).then(() => {
+      Promise.all([... effect.loadingPromises, new Promise(resolve => {
+        var background = document.createElement('img');
+        background.onload = resolve;
+        background.src = './resources/background-snow.png';
+      })]).then(() => {
         view.update('game', gameConfig);
         player.setVolume(20);
         ui.game = view.router.view; // FIXME
