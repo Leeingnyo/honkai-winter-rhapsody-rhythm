@@ -8,7 +8,11 @@ class SelectCharacterOption {
     );
 
     this.character.onclick = () => {
-      view.update('prepare', this.song);
+      if (this.song.videoId && this.song.notes && this.song.notes.length) {
+        view.update('prepare', this.song);
+      } else {
+        alert('아직 노래가 구현되지 않았어!');
+      }
     };
   }
 
