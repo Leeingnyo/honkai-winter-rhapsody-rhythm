@@ -42,6 +42,98 @@ var songs = [
   ]
 },
 {
+  name: 'BGM - 배틀 챕터보스',
+  characterName: '보키',
+  characterId: 'fuxi',
+  message: '아무리 숨겨도 엉터리 무당',
+  videoId: 'RN2KTrMgg_A',
+  preDelay: 4 * 1000,
+  bpm: 92,
+  notes: [
+    { beat: 0, type: CYAN },
+    { beat: 4, type: CYAN },
+
+    { beat: 8, type: CYAN },
+    { beat: 9, type: CYAN },
+    { beat: 10, type: CYAN },
+    { beat: 11, type: CYAN },
+
+    { beat: 12, type: MAGENTA },
+    { beat: 13, type: MAGENTA },
+    { beat: 14, type: MAGENTA },
+    { beat: 15, type: MAGENTA },
+
+    { beat: 16, type: CYAN },
+    { beat: 17, type: CYAN },
+    { beat: 18, type: CYAN },
+    { beat: 19, type: CYAN },
+
+    { beat: 20, type: MAGENTA },
+    { beat: 21, type: MAGENTA },
+    { beat: 22, type: MAGENTA },
+    { beat: 23, type: MAGENTA },
+
+    { beat: 24, type: YELLOW },
+    { beat: 25, type: YELLOW },
+    { beat: 26, type: YELLOW },
+    { beat: 27, type: YELLOW },
+
+    { beat: 28, type: CYAN },
+    { beat: 29, type: CYAN },
+    { beat: 30, type: CYAN },
+    { beat: 31, type: CYAN },
+
+    { beat: 32, type: YELLOW },
+    { beat: 33, type: YELLOW },
+    { beat: 34, type: YELLOW },
+    { beat: 35, type: YELLOW },
+
+    { beat: 36, type: MAGENTA },
+    { beat: 37, type: MAGENTA },
+    { beat: 38, type: MAGENTA },
+    { beat: 39, type: MAGENTA },
+
+    { beat: 40, type: CYAN },
+    { beat: 41, type: MAGENTA },
+    { beat: 42, type: CYAN },
+    { beat: 43, type: MAGENTA },
+
+    { beat: 44, type: CYAN },
+    { beat: 45, type: MAGENTA },
+    { beat: 46, type: CYAN },
+    { beat: 47, type: MAGENTA },
+
+    { beat: 48, type: CYAN },
+    { beat: 49, type: YELLOW },
+    { beat: 50, type: CYAN },
+    { beat: 51, type: YELLOW },
+
+    { beat: 52, type: CYAN },
+    { beat: 53, type: YELLOW },
+    { beat: 54, type: CYAN },
+    { beat: 55, type: YELLOW },
+
+    { beat: 56, type: YELLOW },
+    { beat: 57, type: MAGENTA },
+    { beat: 58, type: YELLOW },
+    { beat: 59, type: MAGENTA },
+
+    { beat: 60, type: YELLOW },
+    { beat: 61, type: MAGENTA },
+    { beat: 62, type: YELLOW },
+    { beat: 63, type: MAGENTA },
+
+    { beat: 64, type: MAGENTA },
+    { beat: 65, type: CYAN },
+    { beat: 66, type: MAGENTA },
+    { beat: 67, type: CYAN },
+
+    { beat: 68, type: MAGENTA },
+    { beat: 69, type: CYAN },
+    { beat: 70, type: MAGENTA },
+  ]
+},
+{
   name: 'BGM 9',
   characterName: '점성가 케플',
   characterId: 'kepler',
