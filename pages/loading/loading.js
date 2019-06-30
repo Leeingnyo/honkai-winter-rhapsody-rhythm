@@ -21,7 +21,7 @@ class Loading {
     function playerReady() {
       Promise.all([... effect.loadingPromises]).then(() => {
         view.update('game', gameConfig);
-        player.setVolume(30);
+        player.setVolume(20);
         ui.game = view.router.view; // FIXME
       });
     }

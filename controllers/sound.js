@@ -90,6 +90,16 @@ var effect = {
       setTimeout(resolve, 20000);
     }));
     this.data.clickEffectVoid.src = './resources/honkai-click-effect-void.mp3';
+
+    // 시작 사운드
+    this.data.start = document.createElement('audio');
+    this.loadingPromises.push(new Promise(resolve => {
+      this.data.start.oncanplaythrough = () => {
+        resolve();
+      };
+      setTimeout(resolve, 20000);
+    }));
+    this.data.start.src = './resources/honkai-start.mp3';
   },
   play: function (name) {
     console.log(this.data[name]);

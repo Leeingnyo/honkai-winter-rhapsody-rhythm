@@ -40,7 +40,7 @@ class Note {
 class Game {
   constructor() {
     var gameTop = el('.game-top',
-      this.pauseButton = el('button.pause-button.honkai-button.honkai-button--small-top-left-button',
+      this.pauseButton = el('button.pause-button.honkai-button.honkai-button--skew.honkai-button--top-left-button.honkai-button--small-top-left-button',
         this.pauseButtonText = el('div', '||')
       ),
       this.hpGuage = new (function () {

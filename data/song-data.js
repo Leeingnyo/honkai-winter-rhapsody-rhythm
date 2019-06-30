@@ -1,9 +1,9 @@
 var songs = [
 {
   name: 'BGM 3',
-  characterName: '3월의 토끼',
-  characterId: 'sakura',
-  message: '',
+  characterName: '식객 차차',
+  characterId: 'azai-chacha',
+  message: '튜토리얼',
   videoId: 'MYLz8_KGHVI',
   preDelay: 4 * 1000,
   bpm: 110,
