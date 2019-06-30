@@ -19,3 +19,32 @@
   bottom: 0.6rem;
   right: 1rem;
 }
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(20, 20, 100, 0.5);
+  border: 0.03rem solid cornflowerblue;
+}
+
+.popup-title {
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.1rem;
+  color: white;
+}
+.popup-contents {
+  padding: 0.3rem;
+}
+.popup-message {
+  padding: 0.3rem;
+  color: white;
+}
+.popup-button {
+  margin: 0 auto;
+  display: block;
+}
