@@ -510,53 +510,68 @@ var songs = [
   message: '강자 앞에서 탈주병이 되는 게 뭐가 부끄러운 거지?',
   videoId: 'rax5WZgKyTs',
   preDelay: 4 * 1000,
-  bpm: 64,
+  bpm: 125,
   notes: [
-    /*
     { beat: 0, type: CYAN },
-    { beat: 1, type: MAGENTA },
-    { beat: 2, type: CYAN },
-    { beat: 3, type: MAGENTA },
-
+    { beat: 2, type: MAGENTA },
     { beat: 4, type: CYAN },
-    { beat: 5, type: MAGENTA },
-    { beat: 6, type: CYAN },
-    { beat: 7, type: MAGENTA },
+    { beat: 6, type: MAGENTA },
 
     { beat: 8, type: CYAN },
-    { beat: 9, type: MAGENTA },
-    { beat: 10, type: CYAN },
-    { beat: 11, type: MAGENTA },
-
+    { beat: 10, type: MAGENTA },
     { beat: 12, type: CYAN },
-    { beat: 13, type: MAGENTA },
     { beat: 14, type: MAGENTA },
-    { beat: 15, type: MAGENTA },
 
     { beat: 16, type: CYAN },
-    { beat: 17, type: MAGENTA },
-    { beat: 17.5, type: CYAN },
-
-    { beat: 20, type: YELLOW },
-    { beat: 21, type: CYAN },
+    { beat: 18, type: MAGENTA },
+    { beat: 20, type: CYAN },
     { beat: 22, type: MAGENTA },
-    { beat: 22.5, type: CYAN },
 
-    { beat: 24, type: MAGENTA },
-    { beat: 24.5, type: CYAN },
-    { beat: 25, type: CYAN },
+    { beat: 24, type: CYAN },
     { beat: 26, type: MAGENTA },
-    { beat: 27, type: CYAN },
-
     { beat: 28, type: MAGENTA },
-    { beat: 29, type: CYAN },
+    { beat: 30, type: MAGENTA },
 
-    { beat: 32, type: MAGENTA },
+    { beat: 32, type: CYAN },
+    { beat: 34, type: MAGENTA },
+    { beat: 35, type: CYAN },
+    { beat: 38, type: YELLOW },
 
-    { beat: 36, type: YELLOW },
-    { beat: 37, type: YELLOW },
-    { beat: 37.5, type: YELLOW },
-    */
+    { beat: 40, type: CYAN },
+    { beat: 42, type: MAGENTA },
+    { beat: 43, type: CYAN },
+    { beat: 46, type: MAGENTA },
+    { beat: 47, type: CYAN },
+
+    { beat: 48, type: CYAN },
+    { beat: 50, type: MAGENTA },
+    { beat: 52, type: CYAN },
+    { beat: 54, type: MAGENTA },
+
+    { beat: 56, type: CYAN },
+    { beat: 60, type: MAGENTA },
+
+    // 64
+    { beat: 66, type: YELLOW },
+    { beat: 68.25, type: YELLOW },
+    { beat: 69.25, type: YELLOW },
+    { beat: 70.25, type: YELLOW },
+    { beat: 71.25, type: YELLOW },
+
+    { beat: 72, type: YELLOW },
+    { beat: 73.5, type: YELLOW },
+
+    { beat: 80, type: MAGENTA },
+    { beat: 81, type: MAGENTA },
+    { beat: 82, type: MAGENTA },
+
+    { beat: 84, type: CYAN },
+    { beat: 86, type: MAGENTA },
+    { beat: 88, type: CYAN },
+    { beat: 90, type: MAGENTA },
+
+    { beat: 92, type: YELLOW },
+    { beat: 93, type: YELLOW },
   ]
 },
 {
