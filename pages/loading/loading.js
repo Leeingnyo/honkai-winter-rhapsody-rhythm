@@ -18,7 +18,10 @@ class Loading {
 
     // request to sound manager for loading
     // request to image manager for loading
-    function playerReady() {
+    const playerReady = () => {
+      if (this.song.videoStart) {
+        player.seekTo(this.song.videoStart);
+      }
       Promise.all([... effect.loadingPromises, new Promise(resolve => {
         var background = document.createElement('img');
         background.onload = resolve;
