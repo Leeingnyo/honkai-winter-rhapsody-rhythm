@@ -164,6 +164,7 @@ function onYouTubeIframeAPIReady() {
     height: '360',
     width: '640',
     videoId: 'trL9v-Tryeo',
+    suggestedQuality: 'small',
     events: {
       onReady: playerReady
     }

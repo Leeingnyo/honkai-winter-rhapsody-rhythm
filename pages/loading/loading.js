@@ -40,6 +40,7 @@ class Loading {
       height: '360',
       width: '640',
       videoId: song.videoId,
+      suggestedQuality: 'small',
       events: {
         onReady: playerReady,
         onStateChange: function (event) {
