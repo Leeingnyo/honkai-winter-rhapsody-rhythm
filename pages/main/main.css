@@ -10,6 +10,9 @@
 #main p {
   font-size: 0.4rem;
 }
+#main .message {
+  font-size: 0.3rem;
+}
 
 #main .fullscreen-button {
   margin-right: 0.2rem;
