@@ -413,11 +413,11 @@ var songs = [
     { beat: 93, type: YELLOW },
   ]
 },
-{
+{ // https://www.youtube.com/watch?v=AUvm4P8IXng&feature=youtu.be&t=1488
   name: '못찾겠다',
   characterName: '뉴턴',
   characterId: 'newton',
-  message: '사과야 사과. 나의 머리 위로 올라와',
+  message: '사과야 사과. 나의 머리 위로 올라와 (노래 찾는 거 도와주세요 https://www.youtube.com/watch?v=AUvm4P8IXng&feature=youtu.be&t=1488 )',
   videoId: '',
   preDelay: 4 * 1000,
   bpm: 104,
@@ -571,11 +571,11 @@ var songs = [
     { beat: 94, type: CYAN },
   ]
 },
-{
+{ // https://youtu.be/Cj-2sfX8U7Q?t=945
   name: '못 찾겠다 ㅠㅠ',
-  characterName: '채셔캣',
-  characterId: 'karen',
-  message: '스페이드 지하감옥에는 범인 이외에 흉폭하고 진귀한 동물도 있다',
+  characterName: '몬스터',
+  characterId: 'fox',
+  message: '스페이드 지하감옥에는 범인 이외에 흉폭하고 진귀한 동물도 있다 ( 노래 찾는 거 도와주세요 https://youtu.be/Cj-2sfX8U7Q?t=945 )',
   videoId: '',
   preDelay: 4 * 1000,
   bpm: 142,
