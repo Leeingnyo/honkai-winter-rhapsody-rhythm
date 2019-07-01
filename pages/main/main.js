@@ -16,7 +16,7 @@ class Main {
           '캐릭터에 맞는 노래 영상이 유튜브에 올라와있다면 알려주세요. ',
           '그리고 공략캐릭터의 이름이 틀리거나 ',
           '실제 맵과 다른 경우가 있을텐데 그것도 알려주시면 감사하겠습니다.'),
-      el('small', ' v1.1.0', ' (2019-07-01)', { style: { position: 'absolute', right: '6%', bottom: '5%' } }),
+      el('small', ' v1.1.1', ' (2019-07-01)', { style: { position: 'absolute', right: '6%', bottom: '5%' } }),
     );
 
     this.toFullscreenButton.onclick = () => {
