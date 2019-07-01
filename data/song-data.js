@@ -50,6 +50,74 @@ var songs = [
   preDelay: 4 * 1000,
   bpm: 139,
   notes: [
+    { beat: 0, type: CYAN },
+    { beat: 4, type: CYAN },
+    { beat: 8, type: MAGENTA },
+    { beat: 12, type: MAGENTA },
+
+    { beat: 16, type: CYAN },
+    { beat: 18, type: MAGENTA },
+    { beat: 20, type: CYAN },
+    { beat: 22, type: MAGENTA },
+
+    { beat: 24, type: CYAN },
+    { beat: 26, type: MAGENTA },
+    { beat: 28, type: CYAN },
+    { beat: 30, type: MAGENTA },
+
+    { beat: 32, type: CYAN },
+    { beat: 34, type: CYAN },
+    { beat: 36, type: CYAN },
+    { beat: 38, type: CYAN },
+
+    { beat: 40, type: MAGENTA },
+    { beat: 42, type: MAGENTA },
+    { beat: 44, type: MAGENTA },
+    { beat: 46, type: MAGENTA },
+
+    { beat: 48, type: CYAN },
+    { beat: 49, type: CYAN },
+    { beat: 50, type: CYAN },
+    { beat: 52, type: CYAN },
+    { beat: 53, type: MAGENTA },
+    { beat: 54, type: MAGENTA },
+
+    { beat: 56, type: MAGENTA },
+    { beat: 57, type: MAGENTA },
+    { beat: 58, type: MAGENTA },
+
+    { beat: 60, type: CYAN },
+    { beat: 61, type: CYAN },
+    { beat: 62, type: CYAN },
+
+    { beat: 64, type: CYAN },
+    { beat: 66, type: CYAN },
+    { beat: 68, type: CYAN },
+    { beat: 70, type: CYAN },
+
+    { beat: 72, type: MAGENTA },
+    { beat: 74, type: MAGENTA },
+    { beat: 76, type: MAGENTA },
+    { beat: 78, type: MAGENTA },
+
+    { beat: 80, type: MAGENTA },
+    { beat: 82, type: MAGENTA },
+    { beat: 84, type: CYAN },
+    { beat: 86, type: CYAN },
+
+    { beat: 88, type: MAGENTA },
+    { beat: 90, type: MAGENTA },
+    { beat: 92, type: MAGENTA },
+    { beat: 94, type: MAGENTA },
+
+    { beat: 96, type: CYAN },
+    { beat: 98, type: CYAN },
+    { beat: 100, type: CYAN },
+    { beat: 102, type: CYAN },
+
+    { beat: 104, type: MAGENTA },
+    { beat: 106, type: MAGENTA },
+    { beat: 108, type: MAGENTA },
   ]
 },
 {
