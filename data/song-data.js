@@ -505,7 +505,7 @@ var songs = [
 },
 {
   name: '못 찾겠다 ㅠㅠ',
-  characterName: '괴도',
+  characterName: '채셔캣',
   characterId: 'karen',
   message: '스페이드 지하감옥에는 범인 이외에 흉폭하고 진귀한 동물도 있다',
   videoId: '',
@@ -587,7 +587,7 @@ var songs = [
 },
 {
   name: '노래가 없어',
-  characterName: '아인스',
+  characterName: '아인사타인',
   characterId: 'einstein',
   message: '그녀는 가짜 인간입니다. 감정이 없지요',
   videoId: '',
@@ -598,7 +598,7 @@ var songs = [
 },
 {
   name: 'BGM 7',
-  characterName: '고양이소녀',
+  characterName: '슈뢰딩거',
   characterId: 'schrodinger',
   message: '상자 안에 고양이가 있다고 생각했어? 사실은 네코무스메야!',
   videoId: 'gdSsalQOku8',
@@ -699,7 +699,7 @@ var songs = [
 },
 {
   name: 'BGM 13',
-  characterName: '테술라',
+  characterName: '테사라',
   characterId: 'tesla',
   message: '그녀의 다음 대사는: 불쌍한 내 인생~',
   videoId: '-K1lT97XrvU',
@@ -711,7 +711,7 @@ var songs = [
 },
 {
   name: '히메코 붕괴능 각성',
-  characterName: '지하감옥 간수장',
+  characterName: '용병 료마',
   characterId: 'ryouma',
   message: '그 무엇도 용사의 발걸음을 멈추게 할 수 없어! 없다고!',
   videoId: 'cjVv0dBkvpQ',
