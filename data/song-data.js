@@ -1,8 +1,8 @@
 var songs = [
 {
   name: 'BGM 3',
-  characterName: '식객 차차',
-  characterId: 'azai-chacha',
+  characterName: '미친 모자장수',
+  characterId: 'bronya',
   message: '튜토리얼',
   videoId: 'MYLz8_KGHVI',
   preDelay: 4 * 1000,
@@ -39,6 +39,17 @@ var songs = [
     { beat: 56, type: MAGENTA },
     { beat: 58, type: MAGENTA },
     { beat: 60, type: MAGENTA },
+  ]
+},
+{
+  name: 'BGM 6',
+  characterName: '식객 차차',
+  characterId: 'azai-chacha',
+  message: '엥? 유대의 힘, 그게 뭐야? 그냥 이기기만 하면 되는 것 아니었나?',
+  videoId: '16BGVsH3Kkg',
+  preDelay: 4 * 1000,
+  bpm: 139,
+  notes: [
   ]
 },
 {
@@ -723,7 +734,7 @@ var songs = [
 {
   name: '',
   characterName: '임시',
-  characterId: 'bronya',
+  characterId: 'theresa',
   message: '또, 또, 또, 대체 몇 번을 반복해야 하는 거야?',
   videoId: '',
   preDelay: 4 * 1000,
