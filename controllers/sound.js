@@ -164,12 +164,8 @@ function onYouTubeIframeAPIReady() {
     height: '360',
     width: '640',
     videoId: 'trL9v-Tryeo',
-    playerVars: {
-      playlist: 'trL9v-Tryeo',
-      loop: 1
-    },
     events: {
-      onReady: playerReady,
+      onReady: playerReady
     }
   });
 
@@ -177,5 +173,16 @@ function onYouTubeIframeAPIReady() {
     mainBgm.setVolume(20);
     mainBgm.setLoop(true);
     bgm.play();
+
+    // requestAnimationFrame 너무 CPU 먹음
+    setTimeout(function checkBgmPlay() {
+      if (mainBgm.getCurrentTime() > 40.3) {
+        mainBgm.seekTo(0);
+        if (mainBgm.getPlayerState() === 1) {
+          mainBgm.playVideo();
+        }
+      }
+      setTimeout(checkBgmPlay, 1000);
+    }, 1000);
   }
 }
