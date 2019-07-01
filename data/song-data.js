@@ -413,14 +413,15 @@ var songs = [
     { beat: 93, type: YELLOW },
   ]
 },
-{ // https://www.youtube.com/watch?v=AUvm4P8IXng&feature=youtu.be&t=1488
-  name: '못찾겠다',
+{
+  name: 'Quell',
   characterName: '뉴턴',
   characterId: 'newton',
-  message: '사과야 사과. 나의 머리 위로 올라와 (노래 찾는 거 도와주세요 https://www.youtube.com/watch?v=AUvm4P8IXng&feature=youtu.be&t=1488 )',
-  videoId: '',
+  message: '사과야 사과. 나의 머리 위로 올라와',
+  videoId: 'J-ASZf3EamY',
+  videoStart: 1,
   preDelay: 4 * 1000,
-  bpm: 104,
+  bpm: 107,
   notes: [
   ]
 },
@@ -654,11 +655,11 @@ var songs = [
   ]
 },
 {
-  name: '노래가 없어',
-  characterName: '아인사타인',
-  characterId: 'einstein',
+  name: 'Nonsense', // Honkai Impact 3rd Nonsense
+  characterName: '비올라',
+  characterId: 'viola',
   message: '그녀는 가짜 인간입니다. 감정이 없지요',
-  videoId: '',
+  videoId: '', // 짧은 게 없음
   preDelay: 4 * 1000,
   bpm: 104,
   notes: [
@@ -801,8 +802,8 @@ var songs = [
 },
 {
   name: '',
-  characterName: '임시',
-  characterId: 'theresa',
+  characterName: '성야의 순록',
+  characterId: 'mei',
   message: '또, 또, 또, 대체 몇 번을 반복해야 하는 거야?',
   videoId: '',
   preDelay: 4 * 1000,
@@ -812,8 +813,8 @@ var songs = [
 },
 {
   name: '',
-  characterName: '임시',
-  characterId: 'mei',
+  characterName: '유석 현자',
+  characterId: 'huka',
   message: '해피 윈터!',
   videoId: 't2Yf5GzSxzo',
   preDelay: 4 * 1000,
