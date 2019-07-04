@@ -659,10 +659,11 @@ var songs = [
   characterName: '비올라',
   characterId: 'viola',
   message: '그녀는 가짜 인간입니다. 감정이 없지요',
-  videoId: '', // 짧은 게 없음
+  videoId: 'QoTDc9l_ph8', // 짧은 게 없음
   preDelay: 4 * 1000,
   bpm: 104,
   notes: [
+    // 노트가 다 끝나면 그 때 게임이 끝나도록 변경하기
   ]
 },
 {
