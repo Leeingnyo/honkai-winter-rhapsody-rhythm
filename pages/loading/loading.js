@@ -1,6 +1,8 @@
 class Loading {
   constructor() {
-    this.el = el('#loading.screen', 'loading...');
+    this.backgroundImageUrl = loadingBackgrounds[Math.floor(Math.random() * loadingBackgrounds.length)];
+    this.el = el('#loading.screen', el('.loading-message', 'LOADING...'));
+    this.el.style.cssText = '--background-image-url: url(../.' + this.backgroundImageUrl + ')';
   }
 
   update(song) {
@@ -26,7 +28,7 @@ class Loading {
         var background = document.createElement('img');
         background.onload = resolve;
         background.src = './resources/background-snow.png';
-      })]).then(() => {
+      }), new Promise(resolve => setTimeout(resolve, 1500))]).then(() => {
         view.update('game', gameConfig);
         player.setVolume(20);
         ui.game = view.router.view; // FIXME

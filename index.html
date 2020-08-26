@@ -72,7 +72,7 @@ var playtime;
 <script src="./pages/end/end.js"></script>
 <link rel="stylesheet" type="text/css" href="./pages/game/game.css">
 <script src="./pages/game/game.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="./pages/loading/loading.css"> -->
+<link rel="stylesheet" type="text/css" href="./pages/loading/loading.css">
 <script src="./pages/loading/loading.js"></script>
 <link rel="stylesheet" type="text/css" href="./pages/prepare/prepare.css">
 <script src="./pages/prepare/prepare.js"></script>
@@ -83,6 +83,14 @@ var playtime;
 <link rel="stylesheet" type="text/css" href="./pages/view/view.css">
 <script src="./pages/view/view.js"></script>
 <script>
+var loadingBackgrounds = [
+  './resources/loading/bronya-seele.jpg',
+  './resources/loading/group1.jpg',
+  './resources/loading/group2.jpg',
+  './resources/loading/kiana.jpg',
+  './resources/loading/rita.png',
+];
+
 async function loadingAssets() {
   var loadingView = el('span', '필요한 데이터를 불러오고 있습니다. 잠시만 기다려주세요.');
   mount(wrapper, loadingView);
@@ -105,13 +113,6 @@ async function loadingAssets() {
     // icon
     ...(songs.map(song => './resources/head/' + song.characterId + '.png'))
     // loading
-  ];
-  var loadingBackgrounds = [
-    './resources/loading/bronya-seele.jpg',
-    './resources/loading/group1.jpg',
-    './resources/loading/group2.jpg',
-    './resources/loading/kiana.jpg',
-    './resources/loading/rita.png',
   ];
   var allDownloads = Promise.all([...imageAssets, ...loadingBackgrounds].map(url => {
     return new Promise(resolve => {
