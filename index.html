@@ -82,4 +82,60 @@ var playtime;
 <script src="./pages/main/main.js?d=201907042105"></script>
 <link rel="stylesheet" type="text/css" href="./pages/view/view.css">
 <script src="./pages/view/view.js"></script>
+<script>
+async function loadingAssets() {
+  var loadingView = el('span', '필요한 데이터를 불러오고 있습니다. 잠시만 기다려주세요.');
+  mount(wrapper, loadingView);
+
+  var imageAssets = [
+    // character animation
+    './resources/aichan-walk-step-00.png', './resources/aichan-walk-step-01.png', './resources/aichan-walk-step-02.png',
+    './resources/aichan-jump-step-00.png', './resources/aichan-jump-step-01.png', './resources/aichan-jump-step-02.png',
+    './resources/bronya-walk-step-00.png', './resources/bronya-walk-step-01.png', './resources/bronya-walk-step-02.png', './resources/bronya-walk-step-03.png',
+
+    './resources/bronya-jump-step-00.png', './resources/bronya-jump-step-01.png', './resources/bronya-jump-step-02.png', './resources/bronya-jump-step-03.png',
+
+    './resources/sakura-walk-step-00.png', './resources/sakura-walk-step-01.png', './resources/sakura-walk-step-02.png',
+    './resources/sakura-jump-step-00.png', './resources/sakura-jump-step-01.png', './resources/sakura-jump-step-02.png',
+
+    // background
+    './resources/background-snow.png', 
+    './resources/types.jpg',
+    './resources/loading/bronya.png',
+    // icon
+    ...(songs.map(song => './resources/head/' + song.characterId + '.png'))
+    // loading
+  ];
+  var loadingBackgrounds = [
+    './resources/loading/bronya-seele.jpg',
+    './resources/loading/group1.jpg',
+    './resources/loading/group2.jpg',
+    './resources/loading/kiana.jpg',
+    './resources/loading/rita.png',
+  ];
+  var allDownloads = Promise.all([...imageAssets, ...loadingBackgrounds].map(url => {
+    return new Promise(resolve => {
+      var image = new Image();
+      image.onload = resolve;
+      image.onerror = resolve;
+      image.src = url;
+    })
+  }));
+
+  await Promise.race([allDownloads, new Promise(function (resolve) {
+    setTimeout(resolve, 5000);
+  })]);
+
+  unmount(wrapper, loadingView);
+}
+
+function bootstrap() {
+  view = new View();
+
+  mount(wrapper, view);
+  view.update('main');
+}
+
+loadingAssets().then(bootstrap);
+</script>
 </body>

@@ -15,8 +15,3 @@ class View {
     this.router.update(screen, params);
   }
 }
-
-view = new View();
-
-mount(wrapper, view);
-view.update('main');
