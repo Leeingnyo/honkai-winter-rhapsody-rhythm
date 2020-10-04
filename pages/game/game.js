@@ -81,14 +81,15 @@ class Game {
       this.attackWrappers = el('.attack-wrappers')
     );
 
+    var isMobile = window.ontouchstart === null;
     var gameBottom = el('.game-bottom',
       el('.energy-guage-wrapper',
         el('.energy-guage')
       ),
       el('#controls',
-        this.cyanButton = el('button#cyan-button.control-button'),
-        this.yellowButton = el('button#yellow-button.control-button'),
-        this.magentaButton = el('button#magenta-button.control-button')
+        this.cyanButton = el('button#cyan-button.control-button', isMobile ? '' : 'S'),
+        this.yellowButton = el('button#yellow-button.control-button', isMobile ? '' : 'Space Bar'),
+        this.magentaButton = el('button#magenta-button.control-button', isMobile ? '' : 'L')
       )
     );
 

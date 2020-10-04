@@ -5,7 +5,6 @@ class Main {
       el('p', '모바일에서는 시작하기 전에 ', el('span', { style: { fontWeight: 'bold' } }, '전체화면을 눌러'),
           ' 전체화면으로 만드는 것을 권장합니다. 효과음 소리가 작아서 배경음도 작게 설정했습니다. ',
           '디바이스 볼륨에 주의해주세요. 안 되면 새로고침 ㅎㅎ;'),
-      el('p', { style: { color: 'red', fontWeight: 'bold', textAlign: 'center' } }, '키설명 - PC', el('br'), 'S(기계) 스페이스바(생물) L(이능)', el('br'), '모바일은 버튼 클릭'),
       this.toFullscreenButton = el('button.winter-button.fullscreen-button', '전체화면'),
       this.toSelect = el('button.winter-button.start-button', '시작하기'),
       this.muteButton = el('button.winter-button.mute-button', '배경음 끄기'),

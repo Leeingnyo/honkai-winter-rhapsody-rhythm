@@ -275,6 +275,9 @@
   border: none;
   outline: none;
   border-radius: 0.1rem;
+
+  font-size: 0.5rem;
+  color: rgba(0, 0, 0, 0.9);
 }
 #cyan-button {
   width: 3.46rem;
