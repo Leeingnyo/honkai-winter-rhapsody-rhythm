@@ -30,6 +30,7 @@ class Loading {
         background.src = './resources/background-snow.png';
       }), new Promise(resolve => setTimeout(resolve, 1500))]).then(() => {
         view.update('game', gameConfig);
+        player.mute();
         player.setVolume(20);
         ui.game = view.router.view; // FIXME
       });
@@ -69,10 +70,12 @@ class Loading {
               if (firstLoading) {
                 player.pauseVideo();
                 game.timer.setTimeout(function () {
+                  player.unMute();
                   player.playVideo();
                 }, game.song.preDelay - (game.timer.getTime() - playtime));
               } else {
                 if (buffering) {
+                  buffering = false;
                   game.waitForVideo = false;
                   game.timer.activate();
                 }

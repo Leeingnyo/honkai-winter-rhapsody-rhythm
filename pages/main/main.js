@@ -10,7 +10,6 @@ class Main {
       this.muteButton = el('button.winter-button.mute-button', '배경음 끄기'),
       el('p.message', '모바일에서는 렉이 심할 수 있습니다. 언젠가 최적화 하겠습니다. PC 권장. Internet Explorer 사절.'),
       el('p.message', ' 플레이할 노래는 유튜브 영상으로 가져오는데, ',
-          '초기에 잠깐 소리가 날 수 있으며 (고쳐볼 예정), ',
           '버퍼링일 때 게임이 멈추게 되어 플레이가 어려울 수 있으니 ',
           '가급적 통신 환경이 원할한 곳에서 해주시길 바립니다.'),
       el('p.message', '몇 가지는 노래 영상을 찾지 못 하였고, 몇 가지는 노트를 다 만들지 못 했습니다. ',
