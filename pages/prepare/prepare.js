@@ -23,7 +23,7 @@ class Prepare {
     this.startButton.onclick = () => {
       effect.play('start');
       if (!this.song.videoId) {
-        this.popupMessage.textContent = '노래 영상을 찾지 못 했어...';
+        this.popupMessage.textContent = '노래 영상을 찾지 못했어...';
         this.popup.style.display = 'block';
         return;
       }
