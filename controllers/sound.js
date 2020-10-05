@@ -110,6 +110,36 @@ var effect = {
       setTimeout(resolve, 20000);
     }));
     this.data.clickButton.src = './resources/honkai-click-button.mp3';
+
+    // 맵 진입
+    this.data.enterMap = document.createElement('audio');
+    this.loadingPromises.push(new Promise(resolve => {
+      this.data.enterMap.oncanplaythrough = () => {
+        resolve();
+      };
+      setTimeout(resolve, 20000);
+    }));
+    this.data.enterMap.src = './resources/honkai-load_map.mp3';
+
+    // 메뉴 열기
+    this.data.pauseButton = document.createElement('audio');
+    this.loadingPromises.push(new Promise(resolve => {
+      this.data.pauseButton.oncanplaythrough = () => {
+        resolve();
+      };
+      setTimeout(resolve, 20000);
+    }));
+    this.data.pauseButton.src = './resources/honkai-show-menu.mp3';
+
+    // 클리어
+    this.data.clear = document.createElement('audio');
+    this.loadingPromises.push(new Promise(resolve => {
+      this.data.clear.oncanplaythrough = () => {
+        resolve();
+      };
+      setTimeout(resolve, 20000);
+    }));
+    this.data.clear.src = './resources/honkai-clear.mp3';
   },
   play: function (name) {
     this.data[name].currentTime = 0;
