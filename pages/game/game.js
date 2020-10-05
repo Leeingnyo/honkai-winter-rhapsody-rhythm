@@ -76,7 +76,7 @@ class Game {
         el('.indicator')
       ),
       el('.note-line'),
-      el('.floor-line'),
+      // el('.floor-line'),
       this.noteWrappers = list('.note-wrappers', Note, 'index'),
       this.attackWrappers = el('.attack-wrappers')
     );
@@ -102,11 +102,12 @@ class Game {
 
     this.pauseButton.onclick = () => {
       if (game.paused) {
-          this.pauseButtonText.textContent = '||';
-          game.resume();
+        this.pauseButtonText.textContent = '||';
+        game.resume();
       } else {
-          this.pauseButtonText.textContent = '>';
-          game.pause(); // 이름 왜 이럼
+        this.pauseButtonText.textContent = '>';
+        effect.play('pauseButton');
+        game.pause(); // 이름 왜 이럼
       }
     };
 
