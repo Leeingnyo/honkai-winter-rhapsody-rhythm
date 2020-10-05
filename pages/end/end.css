@@ -4,15 +4,29 @@
   background-position: center;
 }
 
-.max-combo-wrapper {
+.result {
   position: absolute;
   top: 50%;
   right: 1rem;
   transform: translateY(-50%);
+}
 
+.title {
+  transform: skewX(-16deg);
+  color: white;
+  font-weight: bold;
+  margin-left: 0.8rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  text-shadow:
+      1px 1px black, 1px 0px black, 0px 1px black,
+      2px 1px black, 1px 2px black, 2px 2px black,
+      0px 2px black, 2px 0px black;
+}
+
+.max-combo-wrapper {
   display: flex;
   justify-content: flex-end;
-  width: 100%; /* ? */
 }
 
 .max-combo-wrapper > div {

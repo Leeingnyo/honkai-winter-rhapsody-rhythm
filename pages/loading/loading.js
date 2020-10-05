@@ -96,6 +96,7 @@ class Loading {
 
 function copySong(song) {
   return {
+    name: song.characterName,
     preDelay: song.preDelay,
     bpm: song.bpm,
     notes: song.notes.map(function (note, index) {
