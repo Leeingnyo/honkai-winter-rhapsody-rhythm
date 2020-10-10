@@ -125,7 +125,6 @@ class Game {
     game.song = gameConfig.song;
     game.init();
     this.createNotes();
-    player.playVideo();
     playtime = game.timer.getTime();
 
     window.requestAnimationFrame(this.gameDraw);
