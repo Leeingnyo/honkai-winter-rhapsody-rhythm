@@ -13,7 +13,7 @@ class Main {
           '가급적 통신 환경이 원할한 곳에서 해주시길 바립니다.'),
       el('p.message', '몇 가지는 노래 영상을 찾지 못 했고, 몇 가지는 노트를 다 만들지 못 했습니다. ',
           '캐릭터에 맞는 노래 영상이 유튜브에 올라와있다면 알려주세요.'),
-      el('small', ' v1.1.8', ' (2020-10-06)', { style: { position: 'absolute', right: '6%', bottom: '5%' } }),
+      el('small', ' v1.1.9', ' (2020-10-10)', { style: { position: 'absolute', right: '6%', bottom: '5%' } }),
     );
 
     this.toFullscreenButton.onclick = () => {
