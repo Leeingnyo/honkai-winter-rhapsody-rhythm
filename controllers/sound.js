@@ -189,6 +189,18 @@ var bgm = {
 
 var mainBgm;
 bgm.prepare();
+
+var CancelablePromise = fn => {
+  var cancel;
+  var promise = new Promise((resolve, reject) => {
+    cancel = reject;
+    fn(resolve, reject);
+  });
+  return [promise, cancel];
+}
+var [wait, cancel] = CancelablePromise((resolve, reject) => setTimeout(resolve, 5000));
+wait.then(_ => window.location.reload()).catch(_ => _);
+
 function onYouTubeIframeAPIReady() {
   mainBgm = new YT.Player('main-bgm-' + bgm.count(), {
     height: '360',
@@ -201,6 +213,7 @@ function onYouTubeIframeAPIReady() {
   });
 
   function playerReady() {
+    cancel();
     mainBgm.setVolume(20);
     mainBgm.setLoop(true);
     bgm.play();
@@ -217,3 +230,5 @@ function onYouTubeIframeAPIReady() {
     }, 1000);
   }
 }
+
+window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
