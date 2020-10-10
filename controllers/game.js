@@ -13,7 +13,7 @@ var game = {
   },
   init: function () {
     this.over = false;
-    this.combo.resetCount();
+    this.combo.init();
 
     this.stage.hp = this.stage.maxHp;
     this.stage.shield = this.stage.maxShield;
